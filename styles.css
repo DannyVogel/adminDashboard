@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 12px;
+}
+
+body {
+    display: grid;
+    grid-template: 130px 3fr / 200px 3fr;
+    background-color: rgb(212, 212, 212);
+    height: 100vh;
+}
+
+.iconMain {
+    width: 50px;
+}
+
+.icon {
+    width: 20px;
+    cursor: pointer;
+}
+
+header {
+    background-color: white;
+    grid-area: 1/2/1/2;
+    padding: 0 10px;
+    box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+}
+
+.headerTop, .headerBottom {
+    display: flex;
+    margin: 15px;
+    align-items: center;
+    gap: 20px;
+}
+
+.searchBar {
+    flex-grow: 2;
+    margin-right: 30px;
+    border-radius: 10px;
+    background-color: rgb(212, 212, 212);
+    border: none;
+}
+
+.notificationIcon {
+    margin-left: auto;
+}
+
+.profilePic {
+    width: 50px;
+    border-radius: 50%;
+    object-position: 10% 10%;
+    cursor: pointer;
+}
+
+.smallPic {
+    width: 20px;
+}
+
+.userName {
+    font-weight: bold;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.greetingBox > p:nth-child(2) {
+    margin-top: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btn {
+    width: 75px;
+    border-radius: 20px;
+    border: none;
+    line-height: 2;
+    background-color: rgb(37, 109, 216);
+    color: white;
+    font-weight: bold;
+}
+
+.headerButtons {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+nav {
+    background-color: rgb(37, 109, 216);
+    grid-area: 1/1/3/1;
+}
+
+.navTitle, .navItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: white;
+}
+
+nav > div:nth-child(2) {
+    margin-top: 30px;
+}
+
+nav > div:nth-child(8) {
+    margin-top: 50px;
+}
+
+
+
+main {
+    grid-area: 2/2/2/2;
+    display: grid;
+    grid-template: 1fr / 2fr 1fr;
+}
+
+.projectBox {
+    grid-area: 1/1/2/2;
+    display: grid;
+    grid-template: repeat(auto-fit, 125px) / repeat(auto-fit, 200px);
+    gap: 15px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+}
+
+.projectItem {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    width: 100%;
+    height: 100%;
+}
+
+.announcementBox, .trendingBox {
+    grid-area: 1/2/2/3;
+    background-color: blueviolet;
+}

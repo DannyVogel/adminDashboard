@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
-    font-size: 12px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
 }
 
 body {
     display: grid;
-    grid-template: 130px 3fr / 200px 3fr;
-    background-color: rgb(212, 212, 212);
+    grid-template: 200px 3fr/ 250px 3fr;
+    background-color: rgb(235, 227, 227);
     height: 100vh;
 }
 
@@ -16,7 +19,7 @@ body {
 }
 
 .icon {
-    width: 20px;
+    width: 25px;
     cursor: pointer;
 }
 
@@ -27,21 +30,36 @@ header {
     box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
     -webkit-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
     -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    display: grid;
+    grid-template: repeat(2, 1fr)/ 1fr;
 }
 
-.headerTop, .headerBottom {
-    display: flex;
-    margin: 15px;
+.headerTop {
+    display: grid;
+    grid-template: 1fr / 100px minmax(200px, 1300px) 1fr;
     align-items: center;
+    justify-content: center;
+}
+
+.headerTop > img {
+    justify-self: end;
+    margin-right: 20px;
+}
+
+.userBox {
+    display: flex;
     gap: 20px;
+    justify-content: end;
+    margin-right: 50px;
+    align-items: center;
 }
 
 .searchBar {
     flex-grow: 2;
-    margin-right: 30px;
     border-radius: 10px;
     background-color: rgb(212, 212, 212);
     border: none;
+    margin-right: 30px;
 }
 
 .notificationIcon {
@@ -49,22 +67,32 @@ header {
 }
 
 .profilePic {
-    width: 50px;
+    width: 70px;
     border-radius: 50%;
     object-position: 10% 10%;
     cursor: pointer;
 }
 
 .smallPic {
-    width: 20px;
+    width: 45px;
 }
 
 .userName {
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 p {
     font-size: 1rem;
+}
+
+.headerBottom {
+    display: grid;
+    grid-template: 1fr / 100px 100px 1fr 400px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 15px;
+    margin-left: 45px;
 }
 
 .greetingBox > p:nth-child(2) {
@@ -74,7 +102,7 @@ p {
 }
 
 .btn {
-    width: 75px;
+    width: 100px;
     border-radius: 20px;
     border: none;
     line-height: 2;
@@ -84,16 +112,18 @@ p {
 }
 
 .headerButtons {
-    margin-left: auto;
+    grid-area: 1/4/1/5;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
 }
 
 nav {
+    position: relative;
     background-color: rgb(37, 109, 216);
     grid-area: 1/1/3/1;
+    height: ;
 }
 
 .navTitle, .navItem {
@@ -103,33 +133,67 @@ nav {
     margin-left: 20px;
     margin-top: 20px;
     color: white;
+    height: 30px;
 }
 
 nav > div:nth-child(2) {
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 nav > div:nth-child(8) {
     margin-top: 50px;
 }
 
+nav > div:last-child {
+    position: absolute;
+    bottom: 0;
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-variant-caps:petite-caps;
+}
 
+.navItem > p {
+    font-size: 1rem;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-variant-caps:petite-caps;
+    margin-top: 100%;
+}
 
 main {
     grid-area: 2/2/2/2;
     display: grid;
-    grid-template: 1fr / 2fr 1fr;
+    grid-template: 30px 1fr / 1fr 300px;
+    align-items: center;
+    padding-top: 10px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+main > h3 {
+    padding-left: 15px;
+    height: 30px;
+    font-size: 1.25rem;
 }
 
 .projectBox {
-    grid-area: 1/1/2/2;
+    grid-area: 2/1/2/2;
     display: grid;
-    grid-template: repeat(auto-fit, 125px) / repeat(auto-fit, 200px);
-    gap: 15px;
-    padding: 15px;
+    grid-template: repeat(auto-fit, minmax(100px, 250px)) / repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     width: 100%;
     height: 100%;
-    justify-self: center;
+    margin-left: 15px;
 }
 
 .projectItem {
@@ -141,9 +205,121 @@ main {
     -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template: 50px 1fr 50px / 10px 1fr;
+    gap: 5px;
 }
 
-.announcementBox, .trendingBox {
+.borderDiv {
+    grid-area: 1/1/4/2;
+    background-color: rgb(230, 175, 73);
+}
+
+.projectItemTitle {
     grid-area: 1/2/2/3;
-    background-color: blueviolet;
+    align-self: center;
+}
+
+.projectItemText {
+    grid-area: 2/2/3/3 ;
+    height: 100%;
+}
+
+.iconBox {
+    grid-area: 3/2/4/3;
+    justify-self: end;
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.rightSidebar {
+    grid-area: 1/2/3/3;
+    display: grid;
+    grid-template: 30px 300px 50px 300px / 1fr;
+    height: 100%;
+    margin-left: 50px;
+}
+
+.announcementTitle {
+    grid-area: 1/1/2/2;
+    margin-left: 15px;
+    font-size: 1.25rem;        
+}
+
+.trendingTitle {
+    grid-area: 3/1/4/2;
+    margin-left: 15px;   
+    line-height: 20px;
+    align-self: end;
+    font-size: 1.25rem;
+    padding-bottom: 5px;
+}
+
+.announcementBox {
+    grid-area: 2/1/3/2;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    margin-left: 15px;
+    margin-right: 5px;
+    display: grid;
+    grid-template: repeat(3, 1fr) / 1fr;
+    align-items: center;
+}
+
+.announcementItem {
+    margin: 0 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.377);
+    padding-bottom: 10px;
+}
+
+.announcementItem > p {
+    margin-bottom: 10px;
+}
+
+.announcementItem:last-child {
+    border: none;
+}
+
+
+.trendingBox {
+    grid-area: 4/1/5/2;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 2px 4px -2px rgba(0,0,0,0.75);
+    margin-left: 15px;
+    margin-right: 5px;
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+    align-items: center;
+    
+}
+
+.trendingItem {
+    display: grid;
+    grid-template: repeat(2, 1fr) / 1fr 2fr;
+    align-items: center;
+}
+
+.trendingItem > img {
+    grid-area: 1/1/3/2;
+    align-self: center;
+    justify-self: center;
+}
+
+.trendingItem > h4 {
+    grid-area: 1/2/2/3;
+    font-size: 1rem;
+}
+
+.trendingItem > p {
+    grid-area: 2/2/3/3;
+    font-size: 0.75rem;
 }
